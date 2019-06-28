@@ -9,8 +9,9 @@ HOMEPAGE
 <center> <h2> {{ message }} </h2> </center>
 
 {% if request.user.is_authenticated %}
-<table class="table">
-  <thead>
+<div class="table-responsive">
+<table class="table table-bordered table-hover table-striped">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Node Name</th>
@@ -35,5 +36,6 @@ HOMEPAGE
 
 {% endfor %}
 </table>
+</div>
 {% endif %}
 {% endblock %}
