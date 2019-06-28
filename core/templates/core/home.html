@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+
+
+{% block title %}
+HOMEPAGE
+{% endblock %}
+
+{% block body %}
+<center> <h2> {{ message }} </h2> </center>
+
+{% if request.user.is_authenticated %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Node Name</th>
+      <th scope="col">Gateway Name</th>
+      <th scope="col">x - coordinate </th>
+      <th scope="col">y - coordinate </th>
+      <th scope="col">Block </th>
+    </tr>
+  </thead>
+ {% for o in object %}
+  <tbody>
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{o.node_name}}</td>
+      <td>{{o.gateway_id}}</td>
+      <td>{{o.x_coordinate}}</td>
+      <td>{{o.y_coordinate}}</td>
+      <td> {{ o.block_id}}</td>
+    </tr>
+
+  </tbody>
+
+{% endfor %}
+</table>
+{% endif %}
+{% endblock %}

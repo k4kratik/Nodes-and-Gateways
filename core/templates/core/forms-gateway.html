@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block js %}
+
+<!--<script>-->
+<!--function myFunction() {-->
+<!--alert("The gateway has been submitted");-->
+<!--window.open("{% url 'create-node' %}");-->
+<!--}-->
+<!--</script>-->
+
+{% endblock %}
+
+{% block title %} Create Gateway {% endblock %}
+
+
+
+{% block body %}
+<div class="container">
+<form method="post" action="." class="form-horizontal col-md-4 offset-md-4">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="col-sm-10">
+    {{ form|crispy }}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary"> SEND </button>
+</form>
+</div>
+{% endblock %}

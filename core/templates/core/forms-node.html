@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Create Node {% endblock %}
+
+{% block body %}
+
+<div class="container">
+<form method="post" action="." class="form-horizontal col-md-4 offset-md-4">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="col-sm-10">
+    {{ form.as_p }}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary"> SEND </button>
+</form>
+</div>
+
+
+{% endblock %}
