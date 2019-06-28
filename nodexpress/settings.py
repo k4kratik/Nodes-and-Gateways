@@ -25,7 +25,7 @@ SECRET_KEY = 'vogtlsa1pzi6^spme4e$=cf)c6_&7wtqe3y2b3b1h@6=21c4n_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nodexpress-app.herokuapp.com',]
+ALLOWED_HOSTS = ['nodexpress-app.herokuapp.com', 'localhost']
 
 
 # Application definition
