@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vogtlsa1pzi6^spme4e$=cf)c6_&7wtqe3y2b3b1h@6=21c4n_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG")
 
 ALLOWED_HOSTS = ['nodexpress-app.herokuapp.com', 'localhost']
 
