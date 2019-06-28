@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+
+{% block title %}
+Gateway List
+{% endblock %}
+
+{% block body %}
+<center> <h2> {{ message }} </h2> </center>
+
+{% if request.user.is_authenticated %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Gateway Name</th>
+      <th scope="col">x - coordinate </th>
+      <th scope="col">y - coordinate </th>
+      <th scope="col">Number of Nodes </th>
+    </tr>
+  </thead>
+
+ {% for o in object %}
+  <tbody>
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{o.gateway_name}}</td>
+      <td>{{o.x_coordinate}}</td>
+      <td>{{o.y_coordinate}}</td>
+      <td> {{ o.number_nodes}}</td>
+    </tr>
+
+  </tbody>
+{% endfor %}
+
+</table>
+{% endif %}
+{% endblock %}
